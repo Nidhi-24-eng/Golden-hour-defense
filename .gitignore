@@ -1,0 +1,40 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Environment & IDE
+.env
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Large Datasets & Intermediate Artifacts (Big Data Limit Protection)
+# GitHub enforces a 100MB hard limit per file and warns above 50MB.
+data/*.csv
+data/*.parquet
+data/*.pkl
+data/*.npy
+data/graphs/*.npz
+data/graphs/*.pt
+
+# Keep directory structure tracked in git
+!data/.gitkeep
+!data/graphs/.gitkeep
+!data/graphs/node_mapping.json
+
+data/DataSet.csv

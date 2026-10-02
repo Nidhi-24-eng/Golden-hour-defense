@@ -1,0 +1,97 @@
+{
+  "mean_cv_auprc": 0.6324145372667181,
+  "std_cv_auprc": 0.22241998538038493,
+  "mean_cv_roc_auc": 0.9573146552115201,
+  "overall_oof_auprc": 0.6092158718270436,
+  "overall_oof_roc_auc": 0.9286334440206232,
+  "precision_at_50": 0.74,
+  "precision_at_100": 0.48,
+  "precision_at_200": 0.3,
+  "optimal_threshold": 0.74,
+  "best_f1_score": 0.6154,
+  "precision_at_optimal": 0.7097,
+  "recall_at_optimal": 0.5432,
+  "confusion_matrix": {
+    "true_negative": 8983,
+    "false_positive": 18,
+    "false_negative": 37,
+    "true_positive": 44
+  },
+  "top_15_features": [
+    {
+      "rank": 1,
+      "feature": "F2037",
+      "importance": 0.0
+    },
+    {
+      "rank": 2,
+      "feature": "F2072",
+      "importance": 0.0
+    },
+    {
+      "rank": 3,
+      "feature": "F2084",
+      "importance": 0.0
+    },
+    {
+      "rank": 4,
+      "feature": "F1593",
+      "importance": 0.0
+    },
+    {
+      "rank": 5,
+      "feature": "F1873",
+      "importance": 0.0
+    },
+    {
+      "rank": 6,
+      "feature": "F1964",
+      "importance": 0.0
+    },
+    {
+      "rank": 7,
+      "feature": "F1976",
+      "importance": 0.0
+    },
+    {
+      "rank": 8,
+      "feature": "F1359",
+      "importance": 0.0
+    },
+    {
+      "rank": 9,
+      "feature": "F1035",
+      "importance": 0.0
+    },
+    {
+      "rank": 10,
+      "feature": "F1357",
+      "importance": 0.0
+    },
+    {
+      "rank": 11,
+      "feature": "F1033",
+      "importance": 0.0
+    },
+    {
+      "rank": 12,
+      "feature": "F1862",
+      "importance": 0.0
+    },
+    {
+      "rank": 13,
+      "feature": "F1861",
+      "importance": 0.0
+    },
+    {
+      "rank": 14,
+      "feature": "F1701",
+      "importance": 0.0
+    },
+    {
+      "rank": 15,
+      "feature": "F1687",
+      "importance": 0.0
+    }
+  ]
+}
