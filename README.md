@@ -29,44 +29,71 @@ An enterprise-grade, multi-stage machine learning system designed to detect and 
                       | - PyTorch Geometric Topology (555k)   |
                       +-------------------+-------------------+
                                           |
+        +---------------------------------+---------------------------------+
+        |                                 |                                 |
+        v                                 v                                 v
++---------------+                 +---------------+                 +---------------+
+|    Brain 1    |                 |    Brain 2    |                 |    Brain 3    |
+| Tabular XGB   |                 | PyG Relational|                 |  Zero-Day EIF |
+| (Behavioral)  |                 |      GCN      |                 | (Unsupervised)|
++-------+-------+                 +-------+-------+                 +-------+-------+
+        | (w=0.5882)                      | (w=0.1765)                      | (w=0.2353)
+        +---------------------------------+---------------------------------+
+                                          |
                                           v
                       +---------------------------------------+
-                      | Stage 3: XGBoost Behavioral Ensemble  |
-                      | - Dynamic `scale_pos_weight` (111.12) |
-                      | - Stratified 5-Fold Cross-Validation  |
-                      | - Real-time Precision@K Optimization  |
+                      | Stage 6: Hybrid Late-Fusion Engine    |
+                      | - Calibrated Dynamic Risk Weighted Sum|
+                      | - False Positive Suppression Rules    |
+                      | - Tiered Action Matrix                |
                       +-------------------+-------------------+
                                           |
                                           v
                       +---------------------------------------+
-                      | Alert Triage & Production Checkpoints |
-                      | - Precision@50: 74.0%                 |
-                      | - ROC-AUC: 0.9286 | AUPRC: 0.6092     |
+                      | Real-Time Tiered Enforcement:         |
+                      | - EMERGENCY_FREEZE_LIEN (>= 0.75)     |
+                      | - STEP_UP_CHALLENGE (Suppressed)      |
+                      | - ENHANCED_SURVEILLANCE (0.45 - 0.75) |
+                      | - ALLOW_NORMAL (< 0.45)               |
                       +---------------------------------------+
 ```
 
 ---
 
-## Performance & Benchmark Results
+## Hybrid Immune System: Model Comparison Matrix
 
-Trained on an extremely imbalanced production banking dataset (**81 Mules vs. 9,001 Legitimate accounts**, 0.89% positive rate).
+Trained on an extremely imbalanced production banking dataset (**81 Mules vs. 9,001 Legitimate accounts**, 0.89% positive rate across 9,082 entities).
 
-| Metric | Result | Description |
-| :--- | :--- | :--- |
-| **Stratified 5-Fold Mean AUPRC** | **0.6324** (+/- 0.2224) | Area Under Precision-Recall Curve |
-| **Overall Out-of-Fold AUPRC** | **0.6092** | Robust out-of-fold generalization |
-| **Overall Out-of-Fold ROC-AUC** | **0.9286** | Excellent class separability |
-| **Precision@50 (Top 50 Alerts)** | **74.0%** | 37 confirmed mules in top 50 flagged accounts |
-| **Precision@100 (Top 100 Alerts)** | **48.0%** | Rapid fraud analyst queue prioritization |
-| **Optimal Threshold** | **0.74** | Selected via F1 maximization |
-| **F1-Score at Optimal Threshold** | **0.6154** | Balanced precision & recall |
-| **Precision / Recall at Threshold** | **70.97% / 54.32%** | High alert confidence with low false positive rate |
+| Model Component | AUPRC | ROC-AUC | Primary Operational Role |
+| :--- | :--- | :--- | :--- |
+| **Brain 1: Tabular XGBoost** | **0.6092** | **0.9286** | Behavioral velocity & transactional bursts |
+| **Brain 2: PyG Relational GCN** | **0.0088** | **0.5010** | Syndicate co-location & topological graph clustering |
+| **Brain 3: Extended IsoForest (EIF)** | **0.0355** | **0.8310** | Zero-day novel fraud patterns & unlabelled outliers |
+| **HYBRID FUSION ENGINE** | **0.6099** | **0.9324** | **Unified immune system with false positive suppression** |
 
-### Confusion Matrix at Production Threshold (0.74)
-- **True Negatives** (Legitimate accounts preserved): `8,983`
-- **False Positives** (False alarms): `18`
-- **False Negatives** (Missed mules): `37`
-- **True Positives** (Mules successfully neutralized): `44`
+### Benchmark Highlights:
+- **Optimal Composite Threshold**: `0.75`
+- **Precision@50 (Top 50 Alerts)**: `74.0%` (37 confirmed mules in top 50 flagged accounts)
+- **Precision@100 (Top 100 Alerts)**: `48.0%`
+- **Precision@200 (Top 200 Alerts)**: `30.0%`
+- **Post-Suppression Precision / Recall**: `69.8% / 54.3%`
+- **Post-Suppression F1-Score**: `0.6111`
+- **Operational Confusion Matrix**:
+  - **True Negatives** (Normal banking undisturbed): `8,982`
+  - **False Positives** (Residual alerts): `19`
+  - **False Negatives** (Missed mules): `37`
+  - **True Positives** (Mules neutralized): `44`
+
+---
+
+## Frictionless Tiered Action Policy
+
+The late-fusion decision engine categorizes accounts into granular operational risk tiers during the Golden Hour:
+
+1. **EMERGENCY_FREEZE_LIEN** (`Composite >= 0.75`): Immediate hold applied to account disbursements.
+2. **STEP_UP_CHALLENGE**: Triggered when high network connectivity is mitigated by pristine behavioral telemetry and KYC history.
+3. **ENHANCED_SURVEILLANCE** (`0.45 <= Composite < 0.75`): Enqueued for sliding 60-second velocity tracking.
+4. **ALLOW_NORMAL** (`Composite < 0.45`): Unimpeded frictionless customer transaction.
 
 ---
 
@@ -74,9 +101,9 @@ Trained on an extremely imbalanced production banking dataset (**81 Mules vs. 9,
 
 GitHub enforces a **100 MB hard limit** per file and warns on files exceeding **50 MB**.
 To maintain a clean and lightweight repository:
-- Raw transaction dumps (`data/DataSet.csv`, ~116.5 MB) are **git-ignored** and omitted from source control.
-- Intermediate binaries (`.parquet`, `.npz`, `.pt`) are generated dynamically via reproduction scripts in seconds.
-- Production model checkpoints and validation metrics (`models/`) are saved in lightweight JSON format and version-controlled.
+- Raw transaction dumps (`data/DataSet.csv`, ~116.5 MB) and generated tabular matrices are **git-ignored**.
+- Heavy binary model checkpoints (e.g. `eif_mule_detector.pkl`, ~1.17 GB) are generated locally via reproduction scripts and excluded from version control.
+- Lightweight model weights, graph topologies, evaluation metrics, and hybrid fusion configs (`models/*.json`) are tracked in source control.
 
 ---
 
@@ -90,22 +117,32 @@ Golden_Hour_Hold/
 │   │   └── node_mapping.json           # Node identifier mappings
 │   └── .gitkeep
 ├── models/
-│   ├── xgboost_metrics.json            # Cross-validation benchmark report
+│   ├── .gitkeep
+│   ├── eif_metrics.json                # Brain 3 EIF evaluation report
+│   ├── hybrid_fusion_config.json       # Calibrated fusion weights & policy
+│   ├── rgcn_metrics.json               # Brain 2 Relational GCN report
+│   ├── xgboost_metrics.json            # Brain 1 XGBoost benchmark report
 │   └── xgboost_mule_detector.json      # Production XGBoost checkpoint
 ├── src/
 │   ├── __init__.py
 │   ├── models/
 │   │   ├── __init__.py
-│   │   └── xgboost_model.py            # XGBoost behavioral ensemble engine
+│   │   ├── eif_detector.py             # Brain 3: Extended Isolation Forest
+│   │   ├── hybrid_fusion.py            # Stage 6: Late-Fusion & Suppression Engine
+│   │   ├── rgcn_model.py               # Brain 2: Relational Graph Convolutional Network
+│   │   └── xgboost_model.py            # Brain 1: XGBoost Behavioral Ensemble
 │   └── preprocessing/
 │       ├── __init__.py
 │       ├── graph_builder.py            # PyTorch Geometric relational builder
-│       └── polars_pipeline.py          # High-performance Polars LazyFrame preprocessor
+│       └── polars_pipeline.py          # High-performance Polars preprocessor
 ├── .gitattributes                      # Git line ending configuration
-├── .gitignore                          # Big data exclusion rules
+├── .gitignore                          # Big data & model binary exclusion rules
+├── evaluate_hybrid_fusion.py           # Stage 6 multi-brain benchmark runner
 ├── requirements.txt                    # Project dependencies
 ├── run_pipeline.py                     # Stage 1 data pipeline runner
-├── train_xgboost.py                    # Stage 3 model training runner
+├── train_eif.py                        # Brain 3 training script
+├── train_rgcn.py                       # Brain 2 training script
+├── train_xgboost.py                    # Brain 1 training script
 └── README.md
 ```
 
@@ -115,42 +152,40 @@ Golden_Hour_Hold/
 
 ### 1. Environment Setup
 
-Clone the repository and install dependencies in a virtual environment:
-
 ```bash
-git clone https://github.com/Nidhi-24-eng/Golden-hour-hold.git
-cd Golden-hour-hold
+git clone https://github.com/Nidhi-24-eng/Golden-hour-defense.git
+cd Golden-hour-defense
 
-# Create virtual environment
+# Create and activate virtual environment
 python -m venv .venv
+.venv\Scripts\Activate.ps1   # Windows PowerShell
+# source .venv/bin/activate  # Linux/macOS
 
-# Activate virtual environment
-# On Windows (PowerShell):
-.venv\Scripts\Activate.ps1
-# On Linux/macOS:
-source .venv/bin/activate
-
-# Install requirements
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Add Dataset
-Place your raw dataset file `DataSet.csv` into the `data/` directory:
-```
-data/DataSet.csv
-```
-
-### 3. Run Preprocessing Pipeline (Stage 1)
+### 2. Run Ingestion Pipeline (Stage 1)
 ```bash
 python run_pipeline.py 250
 ```
-*Processes the 3,900+ raw features using Polars LazyFrames, applies variance reduction down to 250 features, median imputation, and robust scaling in seconds.*
 
-### 4. Train Behavioral Ensemble (Stage 3)
+### 3. Train the 3 Defense Brains
 ```bash
+# Brain 1: Behavioral Velocity (XGBoost)
 python train_xgboost.py
+
+# Brain 2: Relational Topology (PyG R-GCN)
+python train_rgcn.py
+
+# Brain 3: Zero-Day Anomaly Detection (Extended Isolation Forest)
+python train_eif.py
 ```
-*Constructs the multi-relational graph topology, executes Stratified 5-Fold Cross Validation with `scale_pos_weight=111.12`, logs out-of-fold performance, and serializes the production model checkpoint to `models/`.*
+
+### 4. Evaluate Stage 6 Hybrid Late-Fusion Engine
+```bash
+python evaluate_hybrid_fusion.py
+```
 
 ---
 

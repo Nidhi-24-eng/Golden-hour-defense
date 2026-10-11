@@ -1,0 +1,18 @@
+{
+  "best_val_auprc": 0.01910990297390521,
+  "overall_auprc": 0.008768719305015098,
+  "overall_roc_auc": 0.5012138798806944,
+  "precision_at_50": 0.0,
+  "precision_at_100": 0.0,
+  "precision_at_200": 0.0,
+  "optimal_threshold": 0.46,
+  "best_f1_score": 0.0206,
+  "precision_at_optimal": 0.0104,
+  "recall_at_optimal": 0.9753,
+  "confusion_matrix": {
+    "true_negative": 1490,
+    "false_positive": 7521,
+    "false_negative": 2,
+    "true_positive": 79
+  }
+}

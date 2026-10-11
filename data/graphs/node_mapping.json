@@ -1,14 +1,14 @@
 {
-  "num_nodes": 9082,
-  "num_edges": 555708,
+  "num_nodes": 9092,
+  "num_edges": 40714,
   "features_dim": 250,
   "edge_breakdown": {
     "TRANSFERRED_TO": 9082,
-    "SHARED_DEVICE": 228196,
-    "SHARED_PROXY_IP": 318430
+    "SHARED_DEVICE": 13258,
+    "SHARED_PROXY_IP": 18374
   },
   "label_distribution": {
-    "0_legitimate": 9001,
+    "0_legitimate": 9011,
     "1_mule": 81
   }
 }

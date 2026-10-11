@@ -1,0 +1,48 @@
+{
+  "w_xgb": 0.588235294117647,
+  "w_rgcn": 0.1764705882352941,
+  "w_eif": 0.23529411764705882,
+  "freeze_threshold": 0.75,
+  "surveillance_threshold": 0.4,
+  "benchmark_metrics": {
+    "optimal_weights": {
+      "w_xgb": 0.5882,
+      "w_rgcn": 0.1765,
+      "w_eif": 0.2353
+    },
+    "standalone_comparison": {
+      "xgboost": {
+        "auprc": 0.6092,
+        "roc_auc": 0.9286
+      },
+      "rgcn": {
+        "auprc": 0.0088,
+        "roc_auc": 0.501
+      },
+      "eif": {
+        "auprc": 0.0355,
+        "roc_auc": 0.831
+      },
+      "hybrid_fusion": {
+        "auprc": 0.6099,
+        "roc_auc": 0.9324
+      }
+    },
+    "precision_at_k": {
+      "p_at_50": 0.74,
+      "p_at_100": 0.48,
+      "p_at_200": 0.3
+    },
+    "decision_threshold": 0.75,
+    "best_f1": 0.6111,
+    "precision_with_suppression": 0.6984,
+    "recall_with_suppression": 0.5432,
+    "false_alarms_suppressed": 0,
+    "confusion_matrix": {
+      "true_negative": 8982,
+      "false_positive": 19,
+      "false_negative": 37,
+      "true_positive": 44
+    }
+  }
+}

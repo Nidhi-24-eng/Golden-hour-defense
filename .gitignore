@@ -32,9 +32,17 @@ data/*.npy
 data/graphs/*.npz
 data/graphs/*.pt
 
+# Trained Model Binaries (e.g. eif_mule_detector.pkl is 1.17GB, exceeding GitHub 100MB limit)
+models/*.pkl
+models/*.pt
+models/*.bin
+*.pkl
+*.pt
+
 # Keep directory structure tracked in git
 !data/.gitkeep
 !data/graphs/.gitkeep
 !data/graphs/node_mapping.json
+!models/.gitkeep
 
 data/DataSet.csv

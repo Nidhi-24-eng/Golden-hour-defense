@@ -1,0 +1,11 @@
+{
+  "unsupervised_auprc": 0.03550388880496842,
+  "unsupervised_roc_auc": 0.830977628000181,
+  "precision_at_50": 0.7,
+  "precision_at_100": 0.43,
+  "precision_at_200": 0.215,
+  "mule_mean_anomaly_score": 0.9982953667640686,
+  "legit_mean_anomaly_score": 0.9593927264213562,
+  "separation_delta": 0.0389026403427124,
+  "engine_used": "Extended_Isolation_Forest"
+}
