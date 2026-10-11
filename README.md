@@ -187,7 +187,24 @@ python train_eif.py
 python evaluate_hybrid_fusion.py
 ```
 
+### 5. Benchmark Stateful Velocity Engine (Stage 7)
+```bash
+python run_streaming_benchmark.py
+```
+
+### 6. Test I4C 1930 Helpline Emergency Brake (Stage 8)
+```bash
+python test_i4c_webhook.py
+```
+
+### 7. Launch Interactive SOC Dashboard (Stage 9)
+```bash
+python run_dashboard.py
+# Open http://127.0.0.1:8000 in your browser
+```
+
 ---
 
 ## License
 MIT License
+
